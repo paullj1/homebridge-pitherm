@@ -27,13 +27,13 @@ function Thermostat(log, config) {
   }
 
   // Documented here: https://github.com/KhaosT/HAP-NodeJS/blob/master/lib/gen/HomeKitTypes.js
-  this.service = new Service.Thermostat(this.name);
 
   this.temperatureDisplayUnits = Characteristic.TemperatureDisplayUnits.FAHRENHEIT;
   this.currentTemperature = 71;
   this.targetTemperature = 71;
   this.currentHeatingCoolingState = Characteristic.CurrentHeatingCoolingState.OFF;
   this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.OFF;
+  this.service = new Service.Thermostat(this.name);
 
 }
 
