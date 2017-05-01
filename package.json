@@ -2,7 +2,7 @@
   "name": "homebridge-pitherm",
   "version": "0.0.1",
   "description": "PiTherm plugin for homebridge: https://github.com/nfarina/homebridge",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "homebridge-plugin"
   ],
@@ -13,15 +13,15 @@
   "author": "Paul Jordan",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paullj1/pitherm.git"
+    "url": "git+https://github.com/paullj1/homebridge-pitherm.git"
   },
   "dependencies": {
     "request": "^2.65.0"
   },
   "bugs": {
-    "url": "https://github.com/paullj1/pitherm/issues"
+    "url": "https://github.com/paullj1/homebridge-pitherm/issues"
   },
-  "homepage": "https://github.com/paullj1/homebridge-thermostat#readme",
+  "homepage": "https://github.com/paullj1/homebridge-pitherm#readme",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
