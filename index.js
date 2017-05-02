@@ -190,8 +190,7 @@ Thermostat.prototype = {
 
   getTemperatureDisplayUnits: function(callback) {
     this.log("getTemperatureDisplayUnits:", this.temperatureDisplayUnits);
-    var error = null;
-    callback(error, this.temperatureDisplayUnits);
+    callback(null, this.temperatureDisplayUnits);
   },
 
   setTemperatureDisplayUnits: function(value, callback) {
