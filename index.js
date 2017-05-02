@@ -200,6 +200,10 @@ Thermostat.prototype = {
     this.service.setCharacteristic(Characteristic.TemperatureDisplayUnits, this.temperatureDisplayUnits);
     callback(null, this.temperatureDisplayUnits); // success
   },
+  getName: function(callback) {
+    this.log("getName :", this.name);
+    callback(null, this.name);
+  },
 
   getServices: function() {
 
