@@ -27,13 +27,13 @@ function Thermostat(log, config) {
   }
 
   // Documented here: https://github.com/KhaosT/HAP-NodeJS/blob/master/lib/gen/HomeKitTypes.js
-
+  this.service = new Service.Thermostat(this.name);
   this.temperatureDisplayUnits = Characteristic.TemperatureDisplayUnits.FAHRENHEIT;
+
   this.currentTemperature = 71;
   this.targetTemperature = 71;
   this.currentHeatingCoolingState = Characteristic.CurrentHeatingCoolingState.OFF;
   this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.OFF;
-  this.service = new Service.Thermostat(this.name);
 
 }
 
@@ -120,7 +120,6 @@ Thermostat.prototype = {
         if (!err && response.statusCode == 200) {
           this.log("response success");
           this.targetHeatingCoolingState = value;
-          this.service.setCharacteristic(Characteristic.TargetHeatingCoolingState, this.targetHeatingCoolingState);
           callback(null, this.targetHeatingCoolingState); // success
         } else {
           this.log("Error getting state: %s", err);
@@ -179,7 +178,6 @@ Thermostat.prototype = {
       if (!err && response.statusCode == 200) {
         this.log("response success");
         this.targetTemperature = parseFloat(value);
-        this.service.setCharacteristic(Characteristic.TargetTemperature, this.targetTemperature);
         callback(null, this.targetTemperature); // success
       } else {
         this.log("Error getting state: %s", err);
@@ -197,7 +195,6 @@ Thermostat.prototype = {
   setTemperatureDisplayUnits: function(value, callback) {
     this.log("setTemperatureDisplayUnits from %s to %s", this.temperatureDisplayUnits, value);
     this.temperatureDisplayUnits = value;
-    this.service.setCharacteristic(Characteristic.TemperatureDisplayUnits, this.temperatureDisplayUnits);
     callback(null, this.temperatureDisplayUnits); // success
   },
   getName: function(callback) {
