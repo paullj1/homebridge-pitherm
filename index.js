@@ -76,7 +76,7 @@ Thermostat.prototype = {
         var json = JSON.parse(body);
         this.log("TargetHeatingCoolingState received is %s", json.targetHeatingCoolingState);
         this.targetHeatingCoolingState = json.targetHeatingCoolingState;
-        this.service.setCharacteristic(Characteristic.TargetHeatingCoolingState, this.targetHeatingCoolingState);
+        //this.service.setCharacteristic(Characteristic.TargetHeatingCoolingState, this.targetHeatingCoolingState);
         
         callback(null, this.targetHeatingCoolingState); // success
       } else {
@@ -141,7 +141,7 @@ Thermostat.prototype = {
         var json = JSON.parse(body);
         this.log("CurrentTemperature %s", json.currentTemperature);
         this.currentTemperature = parseFloat(json.currentTemperature);
-        this.service.setCharacteristic(Characteristic.CurrentTemperature, this.currentTemperature);
+        //this.service.setCharacteristic(Characteristic.CurrentTemperature, this.currentTemperature);
         callback(null, this.currentTemperature); // success
       } else {
         this.log("Error getting state: %s", err);
@@ -161,7 +161,7 @@ Thermostat.prototype = {
         var json = JSON.parse(body); 
         this.log("TargetTemperature is %s", json.targetTemperature);
         this.targetTemperature = parseFloat(json.targetTemperature);
-        this.service.setCharacteristic(Characteristic.TargetTemperature, this.targetTemperature);
+        //this.service.setCharacteristic(Characteristic.TargetTemperature, this.targetTemperature);
         callback(null, this.targetTemperature); // success
       } else {
         this.log("Error getting state: %s", err);
